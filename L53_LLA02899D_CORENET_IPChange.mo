@@ -6,55 +6,56 @@
 /////////////////////////////////////////////////////////////////////////
 ///////                   IpSyncRef=1                               /////
 /////////////////////////////////////////////////////////////////////////
-ACTION
-(
-    actionName removeSyncRefResource
-    mo "ManagedElement=1,TransportNetwork=1,Synchronization=1"
-    exception none
-    nrOfParameters 1
-        Reference "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
-    returnValue none
-)
+//
+//ACTION
+//(
+//    actionName removeSyncRefResource
+//    mo "ManagedElement=1,TransportNetwork=1,Synchronization=1"
+//    exception none
+//    nrOfParameters 1
+//        Reference "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
+//    returnValue none
+//)
 /////////////////////////////////////////////////////////////////////////
 ///////                   IpSyncRef=2                               /////
 /////////////////////////////////////////////////////////////////////////
-ACTION
-(
-    actionName removeSyncRefResource
-    mo "ManagedElement=1,TransportNetwork=1,Synchronization=1"
-    exception none
-    nrOfParameters 1
-        Reference "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
-    returnValue none
-)
+//ACTION
+//(
+//    actionName removeSyncRefResource
+//    mo "ManagedElement=1,TransportNetwork=1,Synchronization=1"
+//    exception none
+//    nrOfParameters 1
+//        Reference "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
+//    returnValue none
+//)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-ECHO "Setting administrativeState Integer 0"
-SET
-(
-    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
-    exception none
-    administrativeState Integer 0
-)
-ECHO "Delete IpSyncRef"
-DELETE
-(
-    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
-    exception none
-)
-ECHO "Setting administrativeState Integer 0"
-SET
-(
-    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
-    exception none
-    administrativeState Integer 0
-)
-ECHO "Delete IpSyncRef"
-DELETE
-(
-    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
-    exception none
-)
+//ECHO "Setting administrativeState Integer 0"
+//SET
+//(
+//    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
+//    exception none
+//    administrativeState Integer 0
+//)
+//ECHO "Delete IpSyncRef"
+//DELETE
+//(
+//    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
+//    exception none
+//)
+//ECHO "Setting administrativeState Integer 0"
+//SET
+//(
+//    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
+//    exception none
+//    administrativeState Integer 0
+//)
+//ECHO "Delete IpSyncRef"
+//DELETE
+//(
+//    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
+//    exception none
+//)
 SET
 (
     mo "ManagedElement=1,ENodeBFunction=1"
@@ -207,24 +208,24 @@ SET
 )
 
 /////////////////////////////////////////
-CREATE
-(
-    parent "ManagedElement=1,IpSystem=1,IpAccessHostEt=1"
-    identity "1"
-    moType IpSyncRef
-    exception none
-    nrOfAttributes 1
-        ntpServerIpAddress String "10.183.82.152"
-)
-CREATE
-(
-        parent "ManagedElement=1,IpSystem=1,IpAccessHostEt=1"
-        identity "2"
-        moType IpSyncRef
-        exception none
-        nrOfAttributes 1
-        ntpServerIpAddress String "10.183.82.153"
-)
+//CREATE
+//(
+//    parent "ManagedElement=1,IpSystem=1,IpAccessHostEt=1"
+//    identity "1"
+//    moType IpSyncRef
+//    exception none
+//    nrOfAttributes 1
+//        ntpServerIpAddress String "10.183.82.152"
+//)
+//CREATE
+//(
+//        parent "ManagedElement=1,IpSystem=1,IpAccessHostEt=1"
+//        identity "2"
+//        moType IpSyncRef
+//        exception none
+//        nrOfAttributes 1
+//        ntpServerIpAddress String "10.183.82.153"
+//)
 
 ////////////////////////////////////////////////////////////////////////
 //   			Add synchref, IPSync                                  //
@@ -233,40 +234,40 @@ CREATE
 /////////////////////////////////////////////////////////////////////////
 ///////                   IpSyncRef=1                                /////
 /////////////////////////////////////////////////////////////////////////
-ACTION
-(
-    actionName addSyncRefResource
-    mo "ManagedElement=1,TransportNetwork=1,Synchronization=1"
-    exception none
-    nrOfParameters 2
-        Reference "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
-    Integer 2
-    returnValue none
-)
-ECHO "Setting administrativeState Integer 1"
-SET
-(
-    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
-    exception none
-    administrativeState Integer 1
-)
+//ACTION
+//(
+//    actionName addSyncRefResource
+//    mo "ManagedElement=1,TransportNetwork=1,Synchronization=1"
+//    exception none
+//    nrOfParameters 2
+//        Reference "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
+//    Integer 2
+//    returnValue none
+//)
+//ECHO "Setting administrativeState Integer 1"
+//SET
+//(
+//    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=1"
+//    exception none
+//    administrativeState Integer 1
+//)
 /////////////////////////////////////////////////////////////////////////
 ///////                   IpSyncRef=2                                /////
 /////////////////////////////////////////////////////////////////////////
-ACTION
-(
-    actionName addSyncRefResource
-    mo "ManagedElement=1,TransportNetwork=1,Synchronization=1"
-    exception none
-    nrOfParameters 2
-        Reference "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
-    Integer 3
-    returnValue none
-)
-ECHO "Setting administrativeState Integer 1"
-SET
-(
-    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
-    exception none
-    administrativeState Integer 1
-)
+//ACTION
+//(
+//    actionName addSyncRefResource
+//    mo "ManagedElement=1,TransportNetwork=1,Synchronization=1"
+//    exception none
+//    nrOfParameters 2
+//        Reference "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
+//    Integer 3
+//    returnValue none
+//)
+//ECHO "Setting administrativeState Integer 1"
+//SET
+//(
+//    mo "ManagedElement=1,IpSystem=1,IpAccessHostEt=1,IpSyncRef=2"
+//    exception none
+//    administrativeState Integer 1
+//)
